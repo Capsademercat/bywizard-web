@@ -157,8 +157,8 @@
     background: #0e0a18;
   }
   .logo svg { width: 100%; height: 100%; display: block; }
-  .logo.img { background: #fff; }
-  .logo.img img { width: 100%; height: 100%; object-fit: contain; padding: 6px; }
+  .logo.img { background: #0e0a18; }
+  .logo.img img { width: 72px; height: 50px; object-fit: cover; display: block; }
 
   .info { flex: 1 1 auto; min-width: 0; }
   .name { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 16px; }
@@ -186,8 +186,8 @@
   /* ---------- Footer: juego responsable (sellos pequeños) ---------- */
   footer { margin-top: 30px; }
   .badges { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 6px; margin-bottom: 14px; opacity: .92; }
-  .badge-oficial { display: block; width: 100%; max-width: 400px; background: #fff; border-radius: 10px; padding: 5px 10px; }
-  .badge-oficial img { width: 100%; height: auto; display: block; }
+  .badge-oficial { display: block; width: 340px; max-width: 100%; }
+  .badge-oficial img { display: block; width: 100%; height: auto; border-radius: 8px; }
   .badge {
     height: 26px; display: inline-flex; align-items: center; gap: 4px;
     padding: 0 7px; border-radius: 6px; background: #fff; text-decoration: none;
@@ -331,9 +331,9 @@ const COUNTRIES = {
       'Estos son <span class="strong">enlaces de afiliado</span>: bywizard__ puede recibir una comisión por los registros, sin coste adicional para ti. ' +
       'Si necesitas ayuda: <a href="https://www.jugarbien.es/" target="_blank" rel="noopener">jugarbien.es</a>.',
     casinos: [
-      { name: 'Casino Gran Madrid', logo: 'cgm', deposit: '20€', tag: '★ Recomendado',
+      { name: 'Casino Gran Madrid', logo: 'logos/cgm.jpg', deposit: '20€', tag: '★ Recomendado',
         url: 'https://ad.casinogranmadridonline.es/redirect.aspx?pid=9387&bid=2262' },
-      { name: 'YoSports', logo: 'yosports', deposit: '30€', tag: '⚽ Apuestas deportivas',
+      { name: 'YoSports', logo: 'logos/yosports.jpg', deposit: '30€', tag: '⚽ Apuestas deportivas',
         url: 'https://wlyogroupaffiliates.adsrv.eacdn.com/C.ashx?btag=a_10282b_130c_&affid=8007634&siteid=10282&adid=130&c=' },
       { name: 'Bet365', logo: 'bet365', deposit: '20€', tag: '🌐 Casino + Deportes',
         url: 'https://www.bet365.com/olp/open-account?affiliate=365_03445311' },
