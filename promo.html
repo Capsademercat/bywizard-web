@@ -114,6 +114,8 @@
   /* ---------- Footer: juego responsable (sellos pequeños) ---------- */
   footer { margin-top: 26px; }
   .badges { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 6px; margin-bottom: 12px; opacity: .92; }
+  .badge-oficial { display: block; width: 100%; max-width: 400px; background: #fff; border-radius: 10px; padding: 5px 10px; }
+  .badge-oficial img { width: 100%; height: auto; display: block; }
   .badge {
     height: 26px; display: inline-flex; align-items: center; gap: 4px;
     padding: 0 7px; border-radius: 6px; background: #fff; text-decoration: none;
@@ -167,10 +169,9 @@
 
     <footer>
       <div class="badges">
-        <span class="badge b18">+18</span>
-        <a class="badge autoex" href="https://www.ordenacionjuego.es/es/rgiaj" target="_blank" rel="noopener"><span class="hand">✋</span> AutoExclusión</a>
-        <a class="badge seguro" href="https://www.ordenacionjuego.es/participantes-juego/juego-seguro" target="_blank" rel="noopener"><span class="flag"></span><span class="txt">juego seguro ▸</span></a>
-        <a class="badge jbien" href="https://www.jugarbien.es/" target="_blank" rel="noopener"><span class="top-l">jugar<b>BIEN</b>.es</span><span class="sub">juega con responsabilidad</span></a>
+        <a class="badge-oficial" href="https://www.ordenacionjuego.es/participantes-juego/juego-seguro" target="_blank" rel="noopener" title="Juego seguro">
+          <img src="logos/sellos-es.jpg" alt="+18 · AutoExclusión · Juego seguro · jugarBIEN.es">
+        </a>
       </div>
       <p class="disclaimer">
         <span class="strong">Prohibido el juego a menores de 18 años.</span> El juego puede provocar adicción.

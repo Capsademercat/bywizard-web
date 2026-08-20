@@ -1,0 +1,7 @@
+Deixa aqui els logos OFICIALS de cada casino (PNG amb fons transparent, ideal ~300px d'ample).
+Noms exactes (respecta'ls i jo els connecto sols):
+
+  Espanya:  cgm.png  ·  yosports.png  ·  bet365.png
+  LATAM:    20bet.png  ·  22bet.png  ·  granawin.png  ·  betwinner.png
+
+Millor font: el back-office de cada programa d'afiliats (seccio banners/creativos/logos).
