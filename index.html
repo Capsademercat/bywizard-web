@@ -289,6 +289,33 @@
    ========================================================================= */
 const DEFAULT_COUNTRY = 'ES';
 
+/* Los 4 casinos internacionales: mismos enlaces en todos los países LATAM;
+   solo cambia el depósito mínimo en moneda local. */
+const LATAM_CASINOS = (dep) => [
+  { name: '20bet', logo: '20bet', deposit: dep, tag: '★ Recomendado',
+    url: 'https://mu.fastmui.com/redirect.aspx?pid=179789&lpid=447&bid=1971' },
+  { name: '22bet', logo: '22bet', deposit: dep, tag: '⚽ Casino + Apuestas',
+    url: 'https://moy.auraodin.com/redirect.aspx?pid=23993&lpid=138&bid=1530' },
+  { name: 'Granawin', logo: 'granawin', deposit: dep, tag: '🎰 Casino',
+    url: 'https://mu.fastmui.com/redirect.aspx?pid=357001&lpid=2576&bid=2169' },
+  { name: 'Betwinner', logo: 'betwinner', deposit: dep, tag: '🌐 Casino + Deportes',
+    url: 'https://bwredir.com/1mn0' },
+];
+
+const LATAM_DISCLAIMER =
+  '<span class="strong">Prohibido para menores de 18 años.</span> El juego puede provocar adicción. ' +
+  'Juega con responsabilidad. Estos son <span class="strong">enlaces de afiliado</span>: ' +
+  'bywizard__ puede recibir una comisión por los registros, sin coste adicional para ti.';
+
+const latamCountry = (label, flag, dep) => ({
+  label, flag,
+  tagline: `🎰 Los mejores casinos en ${label}`,
+  title: `Top Casinos · ${label} ${flag}`,
+  badges: 'intl',
+  disclaimer: LATAM_DISCLAIMER,
+  casinos: LATAM_CASINOS(dep),
+});
+
 const COUNTRIES = {
   ES: {
     label: 'España', flag: '🇪🇸',
@@ -311,18 +338,19 @@ const COUNTRIES = {
     ],
   },
 
-  /* === PLANTILLA: descomenta y rellena para cada país nuevo ===
-  MX: {
-    label: 'México', flag: '🇲🇽',
-    tagline: '🎰 Los mejores casinos en México',
-    title: 'Top Casinos · México 🇲🇽',
-    badges: 'intl',
-    disclaimer: '<span class="strong">Solo mayores de 18 años.</span> Juega con responsabilidad. Enlaces de afiliado.',
-    casinos: [
-      { name: 'Casino X', deposit: '200 MXN', tag: '★ Recomendado', url: 'TU_ENLACE_AQUI' },
-    ],
-  },
-  ========================================================== */
+  // --- LATAM: mismos 4 casinos, depósito mínimo en moneda local ---
+  AR: latamCountry('Argentina', '🇦🇷', '$35.000 ARS'),
+  BR: latamCountry('Brasil', '🇧🇷', 'R$ 120'),
+  BO: latamCountry('Bolivia', '🇧🇴', '300 BOB'),
+  CL: latamCountry('Chile', '🇨🇱', '$25.000 CLP'),
+  CO: latamCountry('Colombia', '🇨🇴', '$75.000 COP'),
+  EC: latamCountry('Ecuador', '🇪🇨', '$25 USD'),
+  GT: latamCountry('Guatemala', '🇬🇹', 'Q 180'),
+  HN: latamCountry('Honduras', '🇭🇳', 'L 650'),
+  MX: latamCountry('México', '🇲🇽', '$400 MXN'),
+  PA: latamCountry('Panamá', '🇵🇦', '$25 USD'),
+  PY: latamCountry('Paraguay', '🇵🇾', '150.000 PYG'),
+  PE: latamCountry('Perú', '🇵🇪', 'S/ 80'),
 };
 
 /* Sets de sellos de juego responsable según el país */
@@ -330,7 +358,7 @@ const BADGE_SETS = {
   es: `
     <span class="badge b18">+18</span>
     <a class="badge autoex" href="https://www.ordenacionjuego.es/es/rgiaj" target="_blank" rel="noopener" title="Registro General de Interdicciones de Acceso al Juego"><span class="hand">✋</span> AutoExclusión</a>
-    <a class="badge seguro" href="https://www.ordenacionjuego.es/" target="_blank" rel="noopener" title="Juego seguro"><span class="flag"></span><span class="txt">juego seguro ▸</span></a>
+    <a class="badge seguro" href="https://www.ordenacionjuego.es/participantes-juego/juego-seguro" target="_blank" rel="noopener" title="Juego seguro"><span class="flag"></span><span class="txt">juego seguro ▸</span></a>
     <a class="badge jbien" href="https://www.jugarbien.es/" target="_blank" rel="noopener" title="jugarBIEN.es"><span class="top-l">jugar<b>BIEN</b>.es</span><span class="sub">juega con responsabilidad</span></a>
   `,
   intl: `
@@ -349,6 +377,10 @@ const BRAND_LOGOS = {
   cgm: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 100"><rect width="144" height="100" fill="#0c0c0c"/><rect x="7" y="7" width="130" height="86" rx="6" fill="none" stroke="#b8923c" stroke-width="1.5" opacity="0.55"/><text x="72" y="29" font-family="Georgia, 'Times New Roman', serif" font-size="9.5" letter-spacing="4" fill="#c9a24a" text-anchor="middle">CASINO</text><text x="72" y="58" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="20" fill="#e7d08a" text-anchor="middle">GRAN</text><text x="72" y="83" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="20" fill="#e7d08a" text-anchor="middle">MADRID</text></svg>`,
   yosports: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 100"><rect width="144" height="100" fill="#da1f2b"/><text x="72" y="60" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-style="italic" font-size="27" fill="#ffffff" text-anchor="middle">YoSports</text></svg>`,
   bet365: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 100"><rect width="144" height="100" fill="#017a59"/><text x="72" y="61" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="30" text-anchor="middle"><tspan fill="#ffffff">bet</tspan><tspan fill="#ffd24d">365</tspan></text></svg>`,
+  '20bet': `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 100"><rect width="144" height="100" fill="#0e63c4"/><text x="72" y="62" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="30" fill="#ffffff" text-anchor="middle">20BET</text></svg>`,
+  '22bet': `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 100"><rect width="144" height="100" fill="#16233f"/><text x="72" y="62" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="30" text-anchor="middle"><tspan fill="#3fb549">22</tspan><tspan fill="#ffffff">BET</tspan></text></svg>`,
+  granawin: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 100"><rect width="144" height="100" fill="#3a1d5c"/><text x="72" y="60" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="22" fill="#e8c66a" text-anchor="middle">Granawin</text></svg>`,
+  betwinner: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 100"><rect width="144" height="100" fill="#1f6f3f"/><text x="72" y="59" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="19" letter-spacing="0.5" fill="#ffffff" text-anchor="middle">BETWINNER</text></svg>`,
 };
 
 /* ---------- Detección de país ---------- */
