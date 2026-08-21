@@ -186,8 +186,13 @@
   /* ---------- Footer: juego responsable (sellos pequeños) ---------- */
   footer { margin-top: 30px; }
   .badges { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 6px; margin-bottom: 14px; opacity: .92; }
-  .badge-oficial { display: block; width: 340px; max-width: 100%; }
-  .badge-oficial img { display: block; width: 100%; height: auto; border-radius: 8px; }
+  .rg { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 16px; }
+  .rg-18 { flex: 0 0 auto; width: 30px; height: 30px; border-radius: 50%; background: #e8333f; color: #fff; font-family: 'Poppins', sans-serif; font-weight: 800; font-size: 11px; display: grid; place-items: center; }
+  .rg-item { display: inline-flex; align-items: center; gap: 6px; color: var(--text-dim); text-decoration: none; font-size: 11.5px; font-weight: 600; letter-spacing: .2px; transition: color .15s ease; }
+  .rg-item:hover { color: #fff; }
+  .rg-ic { width: 18px; height: 18px; fill: none; stroke: #e0605f; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+  .rg-flag { width: 22px; height: 15px; border-radius: 2px; flex: 0 0 auto; background: linear-gradient(#c60b1e 0 30%, #ffc400 30% 70%, #c60b1e 70% 100%); box-shadow: 0 0 0 1px rgba(255,255,255,.18); }
+  .rg-item b { color: #e9dcff; font-weight: 800; }
   .badge {
     height: 26px; display: inline-flex; align-items: center; gap: 4px;
     padding: 0 7px; border-radius: 6px; background: #fff; text-decoration: none;
@@ -358,9 +363,12 @@ const COUNTRIES = {
 /* Sets de sellos de juego responsable según el país */
 const BADGE_SETS = {
   es: `
-    <a class="badge-oficial" href="https://www.ordenacionjuego.es/participantes-juego/juego-seguro" target="_blank" rel="noopener" title="Juego seguro">
-      <img src="logos/sellos-es.png" alt="+18 · AutoExclusión · Juego seguro · jugarBIEN.es">
-    </a>
+    <div class="rg">
+      <span class="rg-18">+18</span>
+      <a class="rg-item" href="https://www.ordenacionjuego.es/es/rgiaj" target="_blank" rel="noopener"><svg class="rg-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 13v-8.5a1.5 1.5 0 013 0v7.5M11 11.5v-2a1.5 1.5 0 013 0v2.5M14 10.5a1.5 1.5 0 013 0v1.5M17 11.5a1.5 1.5 0 013 0v4.5a6 6 0 01-6 6h-2h.208a6 6 0 01-5.012-2.7a69.74 69.74 0 01-.196-.3c-.312-.479-1.407-2.388-3.286-5.728a1.5 1.5 0 01.536-2.022a1.867 1.867 0 012.28.28l1.474 1.5"/></svg>Autoexclusión</a>
+      <a class="rg-item" href="https://www.ordenacionjuego.es/participantes-juego/juego-seguro" target="_blank" rel="noopener"><span class="rg-flag"></span>Juego seguro</a>
+      <a class="rg-item" href="https://www.jugarbien.es/" target="_blank" rel="noopener"><span>jugar<b>BIEN</b>.es</span></a>
+    </div>
   `,
   intl: `
     <span class="badge b18">+18</span>
