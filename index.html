@@ -186,7 +186,7 @@
   /* ---------- Footer: juego responsable (sellos pequeños) ---------- */
   footer { margin-top: 30px; }
   .badges { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 6px; margin-bottom: 14px; opacity: .92; }
-  .badge-oficial { display: block; width: 320px; max-width: 90%; margin: 0 auto; background: #fff; border-radius: 12px; padding: 7px 12px; }
+  .badge-oficial { display: block; width: 380px; max-width: 94%; margin: 0 auto; background: #fff; border-radius: 12px; padding: 6px 10px; }
   .badge-oficial img { display: block; width: 100%; height: auto; }
   .badge {
     height: 26px; display: inline-flex; align-items: center; gap: 4px;
@@ -251,7 +251,6 @@
 
     <footer>
       <div class="badges" id="badges"></div>
-      <p class="disclaimer" id="disclaimer"></p>
     </footer>
 
   </main>
@@ -358,8 +357,8 @@ const COUNTRIES = {
 /* Sets de sellos de juego responsable según el país */
 const BADGE_SETS = {
   es: `
-    <a class="badge-oficial" href="https://www.ordenacionjuego.es/participantes-juego/juego-seguro" target="_blank" rel="noopener" title="Juego seguro">
-      <img src="logos/sellos-es.jpg" alt="+18 · AutoExclusión · Juego seguro · jugarBIEN.es">
+    <a class="badge-oficial" href="https://www.ordenacionjuego.es/participantes-juego/juego-autorizado" target="_blank" rel="noopener" title="Juego autorizado">
+      <img src="logos/sellos-es.jpg" alt="+18 · AutoExclusión · Juego seguro · Juego autorizado">
     </a>
   `,
   intl: `
@@ -433,7 +432,6 @@ function render(code) {
   document.getElementById('cards').innerHTML =
     cards || '<p class="empty">Pronto disponible en tu país 🔜</p>';
   document.getElementById('badges').innerHTML = BADGE_SETS[cfg.badges] || BADGE_SETS.intl;
-  document.getElementById('disclaimer').innerHTML = cfg.disclaimer;
 }
 
 /* ---------- Selector manual (respaldo si la IP falla o usan VPN) ---------- */
